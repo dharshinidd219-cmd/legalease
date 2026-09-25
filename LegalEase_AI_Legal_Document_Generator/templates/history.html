@@ -1,0 +1,3 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>History - LegalEase</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><div><h1>⚖ LegalEase</h1><p>Saved Documents</p></div><a href="/">Create New</a></header>
+<main><section class="card"><h2>Document History</h2>{% if docs %}<table><tr><th>Title</th><th>Type</th><th>Created</th><th>Action</th></tr>{% for d in docs %}<tr><td>{{d.title}}</td><td>{{d.doc_type}}</td><td>{{d.created_at}}</td><td><a class="button small" href="/download/{{d.id}}">Download DOCX</a></td></tr>{% endfor %}</table>{% else %}<p>No documents generated yet.</p>{% endif %}</section></main></body></html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LegalEase</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<header><div><h1>⚖ LegalEase</h1><p>AI-Powered Legal Document Generator</p></div><a href="/history">Document History</a></header>
+<main>
+<section class="hero"><h2>Create a legal document draft in minutes</h2><p>Choose a template, enter the details and preview the generated document.</p></section>
+<form method="post" action="/generate" class="card">
+<label>Document Title<input name="title" placeholder="e.g. House Rental Agreement"></label>
+<label>Document Type<select name="doc_type">{% for t in types %}<option>{{t}}</option>{% endfor %}</select></label>
+<div class="grid">
+<label>Party A<input name="party_a" required></label>
+<label>Party B<input name="party_b"></label>
+<label>Address / Location<input name="address"></label>
+<label>Amount / Salary<input name="amount"></label>
+<label>Term / Duration<input name="term"></label>
+</div>
+<label>Main Terms / Purpose<textarea name="terms" rows="7" required placeholder="Enter the main facts, purpose, duties, conditions or declaration..."></textarea></label>
+<button type="submit">Generate Document</button>
+<p class="note">Educational prototype. Review all generated text with a qualified legal professional before signing or filing.</p>
+</form>
+</main>
+</body></html>
